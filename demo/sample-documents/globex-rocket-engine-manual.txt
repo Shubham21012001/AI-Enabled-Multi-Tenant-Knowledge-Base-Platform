@@ -1,0 +1,16 @@
+Globex Inc — RX-9 Rocket Engine Operations Manual
+
+Overview
+The RX-9 is a liquid-fuelled rocket engine using liquid oxygen and refined kerosene. The maximum thrust of the RX-9 engine is 900 kilonewtons at sea level.
+
+Inspection schedule
+The engine must be inspected every 500 flight hours. Turbopump bearings must be replaced every 2,000 flight hours. A full teardown overhaul is required every 10,000 flight hours.
+
+Start-up sequence
+Before ignition, the propellant lines must be chilled for 15 minutes. Ignition is permitted only when chamber pressure sensors read within 2 percent of nominal values.
+
+Safety
+Only certified technicians with Level 3 clearance may work on the turbopump assembly. Personal protective equipment, including cryogenic gloves and face shields, is mandatory when handling liquid oxygen.
+
+Annual leave note for technicians
+Globex technicians receive 18 days of annual leave, scheduled outside the launch window months.

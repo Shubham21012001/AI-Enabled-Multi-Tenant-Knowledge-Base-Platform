@@ -1,0 +1,27 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets: NEVER commit
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# User-uploaded company documents (tenant data)
+uploads/
+backend/uploads/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+.verify-uploads/

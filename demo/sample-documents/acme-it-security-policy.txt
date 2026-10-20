@@ -1,0 +1,19 @@
+Acme Corp IT Security Policy
+
+Passwords
+All accounts must use passwords of at least 12 characters. Passwords must be changed every 180 days and may not reuse any of the last 5 passwords. Multi-factor authentication is mandatory for email, VPN and the finance portal.
+
+Laptops
+Company laptops must have full-disk encryption enabled and must lock automatically after 5 minutes of inactivity. Lost or stolen laptops must be reported to IT within 2 hours by calling extension 4040.
+
+Software
+Only software from the approved catalogue may be installed. Requests for new software go through the IT helpdesk and are reviewed within 3 working days.
+
+Data classification
+Data is classified as Public, Internal, Confidential or Restricted. Confidential and Restricted data must never be uploaded to personal cloud storage or shared through personal email accounts.
+
+VPN
+The VPN must be used whenever accessing internal systems from outside the office network. VPN sessions disconnect automatically after 8 hours.
+
+Incident reporting
+Suspected phishing emails must be reported using the "Report Phishing" button in Outlook. Security incidents must be reported to security@acme.example immediately.

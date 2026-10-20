@@ -1,0 +1,13 @@
+# Public entry point. Caddy obtains and renews Let's Encrypt certificates
+# automatically for {$DOMAIN} and redirects HTTP -> HTTPS.
+{$DOMAIN} {
+	encode gzip
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		-Server
+	}
+	reverse_proxy frontend:80 {
+		# Keep SSE responses flowing token by token.
+		flush_interval -1
+	}
+}
