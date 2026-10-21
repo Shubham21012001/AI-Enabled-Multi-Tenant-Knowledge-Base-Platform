@@ -77,12 +77,13 @@ class Settings(BaseSettings):
     RATE_LIMIT_PASSWORD_RESET: str = "5/3600"
 
     # --- Email ---
-    EMAIL_PROVIDER: Literal["console", "smtp"] = "console"
+    EMAIL_PROVIDER: Literal["console", "smtp","resend"] = "console"
     SMTP_HOST: str = ""
     SMTP_PORT: int = 587
     SMTP_USER: str = ""
     SMTP_PASSWORD: str = ""
     SMTP_FROM: str = "KnowBot <no-reply@knowbot.local>"
+    RESEND_API_KEY: str = ""
 
     NOT_FOUND_MESSAGE: str = Field(
         default="I couldn't find this information in your company's documents."

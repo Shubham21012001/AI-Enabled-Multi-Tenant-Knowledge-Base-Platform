@@ -14,11 +14,6 @@ class EmailProvider(Protocol):
 
 
 class ConsoleEmailProvider:
-    """Development provider: logs that an email was sent.
-
-    Links contain secret tokens, so the body is only printed outside production.
-    """
-
     def send(self, to: str, subject: str, body: str) -> None:
         if settings.ENVIRONMENT == "production":
             logger.info("Email (console provider) to=%s subject=%r", to, subject)
@@ -40,13 +35,30 @@ class SmtpEmailProvider:
             smtp.send_message(msg)
 
 
+class ResendEmailProvider:
+    def send(self, to: str, subject: str, body: str) -> None:
+        import resend
+        resend.api_key = settings.RESEND_API_KEY
+        resend.Emails.send({
+            "from": settings.SMTP_FROM or "KnowBot <onboarding@resend.dev>",
+            "to": to,
+            "subject": subject,
+            "text": body,
+        })
+
+
 def get_email_provider() -> EmailProvider:
-    return SmtpEmailProvider() if settings.EMAIL_PROVIDER == "smtp" else ConsoleEmailProvider()
+    if settings.EMAIL_PROVIDER == "smtp":
+        return SmtpEmailProvider()
+    if settings.EMAIL_PROVIDER == "resend":
+        return ResendEmailProvider()
+    return ConsoleEmailProvider()
 
 
 def send_email(to: str, subject: str, body: str) -> None:
     """Never let an email failure break the request that triggered it."""
     try:
         get_email_provider().send(to, subject, body)
+        logger.info("Email to=%s subject=%r", to, subject)
     except Exception:
         logger.exception("Failed to send email to=%s subject=%r", to, subject)
